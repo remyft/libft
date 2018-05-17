@@ -6,7 +6,7 @@
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 23:07:03 by rfontain          #+#    #+#             */
-/*   Updated: 2018/05/02 23:27:46 by rfontain         ###   ########.fr       */
+/*   Updated: 2018/05/17 23:23:53 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void				ft_strrev(char *str);
 
 char				*ft_strjoinch(char const *s1, char c);
 int					ft_copyuntil(char **dst, char *src, char c);
+int					ft_for(int i, int delimiter, int inc);
 
 #endif

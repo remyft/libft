@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copyuntil.c                                     :+:      :+:    :+:   */
+/*   ft_for.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/17 22:23:17 by rfontain          #+#    #+#             */
-/*   Updated: 2018/05/17 22:23:22 by rfontain         ###   ########.fr       */
+/*   Created: 2018/04/23 19:30:54 by rfontain          #+#    #+#             */
+/*   Updated: 2018/05/17 22:24:02 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-int		ft_copyuntil(char **dst, char *src, char c)
+int		ft_for(int i, int delimiter, int inc)
 {
-	int		i;
-	int		count;
-	int		pos;
+	static long ind = -2147483649;
 
-	i = 0;
-	count = 0;
-	while (src[i])
+	if (ind == -2147483649)
+		ind = (long)i;
+	ind += (long)inc;
+	if (inc > 0)
 	{
-		if (src[i] == c)
-			break ;
-		i++;
-	}
-	pos = i;
-	if (!(*dst = ft_strnew(i)))
-		return (0);
-	while (src[count] && count < i)
-	{
-		if (!(*dst = ft_strjoinch(*dst, src[count])))
+		if (ind == (long)(delimiter + 1))
 			return (0);
-		count++;
 	}
-	return (pos);
+	else if (inc < 0)
+	{
+		if (ind == (long)(delimiter + 1))
+			return (0);
+	}
+	return (1);
 }
