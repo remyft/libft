@@ -38,7 +38,7 @@ SRCS =	ft_memalloc.c		ft_putendl.c		ft_strcpy.c			\
 		ft_lstmap.c			ft_occuc.c			ft_minprintf.c		\
 		ft_lstadd_back.c	ft_putstrstr.c		ft_putstrstr_fd.c	\
 		ft_strrev.c			ft_copyuntil.c		ft_strjoinch.c		\
-		ft_for.c
+		ft_for.c			ft_strup.c			ft_strlow.c			\
 
 INC = / 
 

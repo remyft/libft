@@ -93,6 +93,9 @@ void				ft_strrev(char *str);
 
 char				*ft_strjoinch(char const *s1, char c);
 int					ft_copyuntil(char **dst, char *src, char c);
+
 int					ft_for(int i, int delimiter, int inc);
+void				ft_strup(char *str, size_t size);
+void				ft_strlow(char *str, size_t size);
 
 #endif
