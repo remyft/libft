@@ -98,4 +98,8 @@ int					ft_for(int i, int delimiter, int inc);
 void				ft_strup(char *str, size_t size);
 void				ft_strlow(char *str, size_t size);
 
+char				*ft_itoa_base(int nb, int base);
+char				*ft_convert_base(int nb, int base, int i);
+int					ft_nblen_base(unsigned int nb, int base);
+
 #endif
