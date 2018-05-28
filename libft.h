@@ -6,7 +6,7 @@
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 23:07:03 by rfontain          #+#    #+#             */
-/*   Updated: 2018/05/17 23:23:53 by rfontain         ###   ########.fr       */
+/*   Updated: 2018/05/28 20:15:58 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_occuc(char *str, int c);
-void				ft_minprintf(char *str, int nb1, int nb2);
 void				ft_lstadd_back(t_list *alst, t_list *new);
 void				ft_putstrstr(char **str, char c);
 void				ft_putstrstr_fd(char **str, char c, int fd);
@@ -93,6 +92,7 @@ void				ft_strrev(char *str);
 
 char				*ft_strjoinch(char const *s1, char c);
 int					ft_copyuntil(char **dst, char *src, char c);
+char				*ft_strjoinfree(char *s1, char *s2, int i);
 
 int					ft_for(int i, int delimiter, int inc);
 void				ft_strup(char *str, size_t size);
