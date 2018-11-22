@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   strdup_until.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/20 11:19:47 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/20 11:20:05 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char		*strdup_until(char *old, char c)
 {
+	char	*str;
 	int		i;
-	char	*find;
-	char	*cp;
 
-	i = 0;
-	cp = (char*)str;
-	if (!str)
+	if (!(str = malloc(sizeof(char) * (ft_strlen_ch(old, c) + 1))))
 		return (NULL);
-	find = NULL;
-	while (cp[i])
+	i = 0;
+	while (old[i] && old[i] != c)
 	{
-		if (cp[i] == c)
-			find = &cp[i];
+		str[i] = old[i];
 		i++;
 	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	str[i] = '\0';
+	return (str);
 }

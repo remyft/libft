@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   strnjoin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/25 16:35:53 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/25 16:43:04 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*strnjoin(char *str1, char *str2, int n)
 {
+	char	*dst;
 	int		i;
-	char	*find;
-	char	*cp;
+	int		j;
 
-	i = 0;
-	cp = (char*)str;
-	if (!str)
+	if (!str1 || !str2)
 		return (NULL);
-	find = NULL;
-	while (cp[i])
+	if (!(dst = (char*)malloc(sizeof(char) * (ft_strlen(str1) + n + 1))))
+		return (NULL);
+	i = -1;
+	while (str1[++i])
+		dst[i] = str1[i];
+	j = 0;
+	while (str2[j] && j < n)
 	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
+		dst[i + j] = str2[j];
+		j++;
 	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	dst[i + j] = '\0';
+	return (dst);
 }

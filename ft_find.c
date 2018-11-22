@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/06 09:01:24 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/06 09:10:59 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+void	ft_find(char *src, char *to_find, int *beg, int *end)
 {
-	int		i;
-	char	*find;
-	char	*cp;
-
-	i = 0;
-	cp = (char*)str;
-	if (!str)
-		return (NULL);
-	find = NULL;
-	while (cp[i])
-	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
-	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	*beg -= 1;
+	while (src[++*beg])
+		if (src[*beg] == to_find[0])
+		{
+			*end = 0;
+			while (src[*beg + *end] && src[*beg + *end] == to_find[*end])
+				*end += 1;
+			if (*end == (int)ft_strlen(to_find))
+				break;
+		}
 }

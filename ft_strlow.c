@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlow.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/19 06:42:01 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/20 18:04:35 by rfontain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_strlow(char *str, size_t size)
+char	*ft_strlow(char *str, size_t size)
 {
 	size_t i;
 
@@ -10,4 +22,5 @@ void	ft_strlow(char *str, size_t size)
 		str[i] = ft_tolower(str[i]);
 		i++;
 	}
+	return (str);
 }

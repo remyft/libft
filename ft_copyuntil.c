@@ -6,7 +6,7 @@
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 22:23:17 by rfontain          #+#    #+#             */
-/*   Updated: 2018/05/17 22:23:22 by rfontain         ###   ########.fr       */
+/*   Updated: 2018/11/22 02:32:28 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int		ft_copyuntil(char **dst, char *src, char c)
 		return (0);
 	while (src[count] && count < i)
 	{
-		if (!(*dst = ft_strjoinch(*dst, src[count])))
-			return (0);
+		(*dst)[count] = src[count];
 		count++;
 	}
 	return (pos);

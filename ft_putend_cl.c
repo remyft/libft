@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putend_cl.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/08 09:59:06 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/08 11:39:36 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+void	ft_putend_cl(char *str1, char *color1, char *str2, char *color2)
 {
-	int		i;
-	char	*find;
-	char	*cp;
-
-	i = 0;
-	cp = (char*)str;
-	if (!str)
-		return (NULL);
-	find = NULL;
-	while (cp[i])
-	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
-	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	ft_putstr(RESET);
+	ft_putstr(color1);
+	ft_putstr(str1);
+	ft_putstr(RESET);
+	ft_putstr(color2);
+	ft_putstr(str2);
+	ft_putstr(RESET);
 }

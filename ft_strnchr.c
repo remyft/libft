@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/29 18:33:53 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/29 18:49:15 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strnchr(const char *str, char c, int n)
 {
 	int		i;
+	int		oc;
 	char	*find;
-	char	*cp;
 
-	i = 0;
-	cp = (char*)str;
-	if (!str)
-		return (NULL);
-	find = NULL;
-	while (cp[i])
-	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
-	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	oc = 0;
+	i = -1;
+	find = (char*)str;
+	while (str[++i])
+		if (str[i] == c)
+			if (++oc == n)
+				break;
+	if (oc == n)
+		return (&find[i]);
+	return (NULL);
 }

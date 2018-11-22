@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   stercat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/26 15:21:37 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/26 15:24:01 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*stercat(char *src1, char *src2, char *dest)
 {
 	int		i;
-	char	*find;
-	char	*cp;
+	int		j;
 
-	i = 0;
-	cp = (char*)str;
-	if (!str)
-		return (NULL);
-	find = NULL;
-	while (cp[i])
-	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
-	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	i = -1;
+	while (src1[++i])
+		dest[i] = src1[i];
+	j = -1;
+	while (src2[++j])
+		dest[i + j] = src2[j];
+	dest[i + j] = '\0';
+	return (dest);
 }

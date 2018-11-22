@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 22:58:50 by rfontain          #+#    #+#             */
-/*   Updated: 2018/10/27 00:37:16 by rfontain         ###   ########.fr       */
+/*   Created: 2018/10/20 11:18:27 by rfontain          #+#    #+#             */
+/*   Updated: 2018/10/20 11:19:06 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+void		*ft_free(void *targ, void *ret)
 {
-	int		i;
-	char	*find;
-	char	*cp;
-
-	i = 0;
-	cp = (char*)str;
-	if (!str)
-		return (NULL);
-	find = NULL;
-	while (cp[i])
-	{
-		if (cp[i] == c)
-			find = &cp[i];
-		i++;
-	}
-	if (cp[i] == c)
-		find = &cp[i];
-	return (find);
+	free(targ);
+	return (ret);
 }

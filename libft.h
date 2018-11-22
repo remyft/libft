@@ -6,7 +6,7 @@
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 23:07:03 by rfontain          #+#    #+#             */
-/*   Updated: 2018/06/03 16:38:15 by rfontain         ###   ########.fr       */
+/*   Updated: 2018/10/29 19:20:08 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,15 @@
 
 # define BUFF_SIZE 32
 # define CHAR_SEP '\n'
+
+# define RED     "\x1b[31m"
+# define GREEN   "\x1b[32m"
+# define YELLOW  "\x1b[33m"
+# define BLUE    "\x1b[34m"
+# define MAGENTA "\x1b[35m"
+# define CYAN    "\x1b[36m"
+# define WHITE   "\x1b[1;37;40m"
+# define RESET   "\x1b[0m"
 
 typedef struct		s_list
 {
@@ -95,19 +104,41 @@ void				ft_putstrstr(char **str, char c);
 void				ft_putstrstr_fd(char **str, char c, int fd);
 void				ft_strrev(char *str);
 
-char				*ft_strjoinch(char const *s1, char c);
+char				*ft_strjoinch(char *s1, char c);
 int					ft_copyuntil(char **dst, char *src, char c);
 char				*ft_strjoinfree(char *s1, char *s2, int i);
 
 int					ft_for(int i, int delimiter, int inc);
-void				ft_strup(char *str, size_t size);
-void				ft_strlow(char *str, size_t size);
+char				*ft_strup(char *str, size_t size);
+char				*ft_strlow(char *str, size_t size);
 
 char				*ft_itoa_base(int nb, int base);
 char				*ft_convert_base(int nb, int base, int i);
 int					ft_nblen_base(unsigned int nb, int base);
 
-int					read_line(int fd, t_list *current);
+int					read_line(int fd, t_list *file);
 int					get_next_line(int fd, char **line);
+
+int					ft_abs(int n);
+void				ft_putend(char *str, char *end);
+void				ft_putnbend(int nb, char *str);
+void				ft_putendnb(char *str, int nb);
+
+char				**ft_strsplit_ws(char const *s);
+void				ft_find(char *src, char *to_find, int *beg, int *end);
+
+void				ft_putstr_cl(char *str, char *color);
+void				ft_putnbr_cl(int nb, char *color);
+void				ft_putendl_cl(char *str, char *color);
+void				ft_putend_cl(char *str1, char *color1, char *str2,
+		char *color2);
+
+int					ft_strlen_ch(char *str, char c);
+char				*strdup_until(char *old, char c);
+void				*ft_free(void *targ, void *ret);
+char				*strnjoin(char *str1, char *str2, int n);
+char				*stercat(char *src1, char *src2, char *dest);
+char				*ft_strnchr(const char *str, char c, int n);
+char				*ft_strndup(char *str, int nb);
 
 #endif

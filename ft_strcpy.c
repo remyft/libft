@@ -6,9 +6,11 @@
 /*   By: rfontain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 22:50:18 by rfontain          #+#    #+#             */
-/*   Updated: 2018/04/04 22:50:29 by rfontain         ###   ########.fr       */
+/*   Updated: 2018/10/25 17:28:59 by rfontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {
