@@ -7,7 +7,13 @@ _Multiple basic C and other usefull functions_
 git clone https://github.com/remyft/libft
 cd libft && make
 ```
-This will create a libft.a file that can be used in any of your .c files (cf. main.c).
+This will create a libft.a file that can be used in any of your .c files.
+
+Exemple:
+```bash
+gcc -o test_libft main.c libft.a
+./test_libft
+```
 
 ## New method learned
 
