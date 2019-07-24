@@ -1,5 +1,5 @@
 # Libft
-_ Multiple basic C and other usefull functions _
+_Multiple basic C and other usefull functions_
 
 ## Build & Run
 
