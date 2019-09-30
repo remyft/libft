@@ -9,7 +9,7 @@ cd libft && make
 ```
 This will create a libft.a file that can be used in any of your .c files.
 
-Exemple:
+Example:
 ```bash
 gcc -o test_libft main.c libft.a
 ./test_libft
